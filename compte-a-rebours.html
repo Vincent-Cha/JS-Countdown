@@ -1,6 +1,6 @@
 <div id="compte_a_rebours"><noscript>Fin de l'évènement le 1er janvier 2023.</noscript></div>
 <script type="text/javascript">
-function compte_a_rebours()
+const compte_a_rebours = () =>
 {
     var compte_a_rebours = document.getElementById("compte_a_rebours");
 
@@ -33,29 +33,17 @@ function compte_a_rebours()
             jours = '';
             mot_jour = '';
         }
-        else if (jours == 1)
-        {
-            mot_jour = "jour,";
-        }
 
         if (heures == 0)
         {
             heures = '';
             mot_heure = '';
         }
-        else if (heures == 1)
-        {
-            mot_heure = "heure,";
-        }
 
         if (minutes == 0)
         {
             minutes = '';
             mot_minute = '';
-        }
-        else if (minutes == 1)
-        {
-            mot_minute = "minute,";
         }
 
         if (secondes == 0)
@@ -64,14 +52,10 @@ function compte_a_rebours()
             mot_seconde = '';
             et = '';
         }
-        else if (secondes == 1)
-        {
-            mot_seconde = "seconde";
-        }
 
         if (minutes == 0 && heures == 0 && jours == 0)
         {
-            et = "";
+            et = '';
         }
 
         compte_a_rebours.innerHTML = prefixe + jours + ' ' + mot_jour + ' ' + heures + ' ' + mot_heure + ' ' + minutes + ' ' + mot_minute + ' ' + et + ' ' + secondes + ' ' + mot_seconde;
